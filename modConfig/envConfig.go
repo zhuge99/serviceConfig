@@ -1,5 +1,10 @@
 package modConfig
 
+import (
+	"os"
+	"serviceConfig/modUserCustomize"
+)
+
 type CEnvironmentConfig struct {
 }
 
@@ -10,6 +15,6 @@ func getSingleEnvConfig() *CEnvironmentConfig {
 }
 
 func (instSelf *CEnvironmentConfig) Initialize() error {
-
+	appid := os.Getenv(modUserCustomize.DIGCD_Key_AppID)
 	return nil
 }
